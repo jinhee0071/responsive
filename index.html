@@ -309,18 +309,48 @@
                     <h3 class="ir_su">반응형 사이트 오른쪽 컨텐츠</h3>
                     <!-- col7 시작 -->
                     <article class="column col7">
-                        <h4 class="col_tit">Title</h4>
-                        <p class="col_desc">이 곳은 설명 부분입니다.</p>
+                        <h4 class="col_tit">Effect1</h4>
+                        <p class="col_desc">CSS의 transform을 이용한 마우스 오버효과입니다.</p>
+                        <div class="side1">
+                            <figure class="front">
+                                <img src="img/side1.jpg" alt="이미지1">
+                            </figure>
+                            <div class="back">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </div>
+                        </div>
                     </article>
                     <!-- col8 시작 -->
                     <article class="column col8">
-                        <h4 class="col_tit">Title</h4>
-                        <p class="col_desc">이 곳은 설명 부분입니다.</p>
+                        <h4 class="col_tit">Effect2</h4>
+                        <p class="col_desc">CSS의 transform을 이용한 마우스 오버효과입니다.</p>
+                        <div class="side2">
+                            <figure class="front">
+                                <img src="img/side4.jpg" alt="이미지2">
+                                <figcaption>
+                                    Hover Effect
+                                </figcaption>
+                            </figure>
+                            <figure class="back">
+                                <img src="img/side2.jpg" alt="이미지2">
+                                <figcaption>
+                                    Hover Effect
+                                </figcaption>
+                            </figure>
+                        </div>
                     </article>
                     <!-- col9 시작 -->
                     <article class="column col9">
-                        <h4 class="col_tit">Title</h4>
-                        <p class="col_desc">이 곳은 설명 부분입니다.</p>
+                        <h4 class="col_tit">Effect3</h4>
+                        <p class="col_desc">CSS의 transform을 이용한 마우스 오버효과입니다.</p>
+                        <div class="side3">
+                            <figure>
+                                <img src="img/side3.jpg" alt="이미지3">
+                                <figcaption>
+                                    <h3>Hover <em>Effect</em></h3>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </article>
             </div>
         </section>
@@ -329,7 +359,24 @@
         <!-- 푸터시작 -->
         <footer id="footer">
             <div class="container">
-                <h2>반응형 사이트 푸터</h2>
+                <div class="row">
+                    <div class="footer">
+                        <ul>
+                            <li><a href="#">사이트 도움말</a></li>
+                            <li><a href="#">사이트 이용약관</a></li>
+                            <li><a href="#">사이트 운영원칙</a></li>
+                            <li><a href="#"><strong>개인정보취급방침</strong></a></li>
+                            <li><a href="#">책임의 한계와 법적고지</a></li>
+                            <li><a href="#">게시중단요청서비스</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                        <address>
+                            Copyright ©
+                            <a href="http://jinheeportfolio.com"><strong>jinheeportfolio</strong></a>
+                            All Rights Reserved.
+                        </address>
+                    </div>
+                </div>
             </div>
         </footer>
     </main>
@@ -342,10 +389,38 @@
     <script src="js/modernizr-custom.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/lightgallery.min.js"></script>
+    <script src="js/lightgallery-all.min.js"></script>
     <script>
+        //메뉴 펼치기
+        $(".btn").click(function(e){
+            e.preventDefault();
+            $(".nav").slideToggle();
+            $(".btn").toggleClass("open");
+
+            if($(".btn").hasClass("open") ){
+                //open이 있을 때
+                $(".btn").find("i").attr("class","fa fa-angle-up");
+            }
+            else{
+                //open 없을 때.
+                $(".btn").find("i").attr("class","fa fa-angle-down");
+            }
+        });
+
+        $(window).resize(function(){
+            var wWidth = $(window).width();
+            if(wWidth>600){
+                $(".nav").removeAttr("style");
+            }
+
+        });
+
         //light box
         $(".lightbox").lightGallery({
-
+            thembnail:true,
+            autoplay:true,
+            pause:3000,
+            progressBar:true
         });
 
         //슬릭슬라이더
