@@ -279,13 +279,29 @@
                     </article>
                     <!-- col5 시작 -->
                     <article class="column col5">
-                        <h4 class="col_tit">Title</h4>
-                        <p class="col_desc">이 곳은 설명 부분입니다.</p>
+                        <h4 class="col_tit">Blend Effect</h4>
+                        <p class="col_desc">Background-blend-mode와 mix-blend-mode</p>
+                        <div class="lightbox square clearfix">
+                            <a href="img/light01_s.jpg"><img src="img/light01.jpg" alt=""><em>blur</em></a>
+                            <a href="img/light02_s.jpg"><img src="img/light02.jpg" alt=""><em>brightness</em></a>
+                            <a href="img/light03_s.jpg"><img src="img/light03.jpg" alt=""><em>contrast</em></a>
+                            <a href="img/light04_s.jpg"><img src="img/light04.jpg" alt=""><em>grayscale</em></a>
+                            <a href="img/light05_s.jpg"><img src="img/light05.jpg" alt=""><em>hue-rotate</em></a>
+                            <a href="img/light06_s.jpg"><img src="img/light06.jpg" alt=""><em>invert</em></a>
+                            <a href="img/light07_s.jpg"><img src="img/light07.jpg" alt=""><em>opacity</em></a>
+                            <a href="img/light08_s.jpg"><img src="img/light08.jpg" alt=""><em>saturate</em></a>
+                            <a href="img/light09_s.jpg"><img src="img/light09.jpg" alt=""><em>sepia</em></a>
+                            <a href="img/light10_s.jpg"><img src="img/light10.jpg" alt=""><em>mix</em></a>
+                        </div>
+
                     </article>
                     <!-- col6 시작 -->
                     <article class="column col6">
-                        <h4 class="col_tit">Title</h4>
-                        <p class="col_desc">이 곳은 설명 부분입니다.</p>
+                        <h4 class="col_tit">Video</h4>
+                        <p class="col_desc">반응형 영상을 보여주는 영역입니다.</p>
+                        <div class="video">
+                            <iframe src="https://www.youtube.com/embed/hCTSUwmI-y0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </article>
                 </section>
 
@@ -325,7 +341,13 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/lightgallery.min.js"></script>
     <script>
+        //light box
+        $(".lightbox").lightGallery({
+
+        });
+
         //슬릭슬라이더
         $(".slider").slick({
             dots: true,
